@@ -14,9 +14,11 @@ def newUser():
         cpf = data['cpf'],
         email = data['email'],
         balance  = data['balance'],
-        typ = data['type'],
+        type = data['type'],
         password = data['pass']
     )
+    user.set_pass(user.password)
+    
     database.add(user)
     database.commit()
     

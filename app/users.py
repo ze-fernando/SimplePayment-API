@@ -1,4 +1,5 @@
-from . import db
+from . import db, bcrypt
+from werkzeug.security import check_password_hash
 
 
 class Users(db.Model):
@@ -10,4 +11,10 @@ class Users(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
     balance = db.Column(db.Float, default=0.0)
-    typ = db.Column(db.String(10), nullable=False)
+    type = db.Column(db.String(10), nullable=False)
+
+    def set_pass(self, password):
+        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
+        
+    def check_pass(self, password):
+        return bcrypt.check_password_hash(self.password, password)
