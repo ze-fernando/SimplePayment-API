@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app import db, Users
+from app import db, Users, TranferService
 
 database = db.session
 
@@ -26,10 +26,12 @@ def newUser():
     
 
 
-"""@app.post('/transfer')
+@app.post('/transfer')
 def transfer():
     data = request.json
-    sender_id
-    reciever_id
-    """
+    sender_id = data['sender']
+    reciever_id = data['recieve']
+    amount = data['amount']
+    TranferService.transfer(sender_id, reciever_id, amount)
+    
     
