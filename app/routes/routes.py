@@ -26,12 +26,19 @@ def newUser():
     
 
 
-@app.post('/transfer')
+@route.post('/transfer')
 def transfer():
     data = request.json
     sender_id = data['sender']
     reciever_id = data['recieve']
     amount = data['amount']
-    TranferService.transfer(sender_id, reciever_id, amount)
+    desc = data['description'] if 'description' in data and data['description'] is not None else None
+
+    
+    sender = Users.query.get(sender_id)
+    reciever = Users.query.get(reciever_id)
+    
+    
+    if sender and reciever: return TranferService.transfer(sender, reciever, amount, desc)
     
     
