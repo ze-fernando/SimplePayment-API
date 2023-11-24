@@ -60,7 +60,7 @@ Returns a JSON response indicating the result of the transaction.
    "email": "shelljoseph@email.com",
    "balance": 1580,
    "type": "common",
-   "password" "h-a-s-h-1-2-3":
+   "password": "h-a-s-h-1-2-3":
 
 }
 ```
