@@ -1,4 +1,4 @@
-# Flask Money Transfer Project
+ï# Flask Money Transfer Project
 
 This is a sample project for a money transfer application using the Flask framework.
 
@@ -66,5 +66,10 @@ Returns a JSON response indicating the result of the transaction.
 ```
 Returns a JSON response indicating the result of the register.
 
+### Testing
+- in root:
+- `pytest -q no:warnings tests/test.py`
+
+ 
 ### Contribution
 Feel free to contribute improvements, bug fixes, or new features. Open an issue or submit a pull request!
