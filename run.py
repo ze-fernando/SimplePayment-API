@@ -1,10 +1,12 @@
 from app import create_app, db
+from flask_pydantic_spec import FlaskPydanticSpec
 
-
-app = create_app()
+run = create_app()
+spec = FlaskPydanticSpec('flask', title='CRUD API')
+spec.register(run)
 
 
 if __name__ == '__main__':
-    with app.app_context():
+    with run.app_context():
         db.create_all()
-    app.run(debug=True)
+    run.run(debug=True)
