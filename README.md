@@ -68,10 +68,7 @@ Returns a JSON response indicating the result of the register.
 
 ### Testing
 - in root:
-```bash
-    pytest -q no:warnings tests/test.py
-```
-
+- `pytest -q no:warnings tests/test.py`
  
 ### Contribution
 Feel free to contribute improvements, bug fixes, or new features. Open an issue or submit a pull request!
